@@ -1,0 +1,177 @@
+﻿:root {
+    --credo-bg: #05070a;
+    --credo-bg-soft: #0b1017;
+    --credo-panel: rgba(8, 13, 19, 0.94);
+    --credo-panel-solid: #0c1118;
+    --credo-red: #8f101b;
+    --credo-red-bright: #c51b2b;
+    --credo-red-dark: #4b070d;
+    --credo-red-metal-top: #b51b2a;
+    --credo-red-metal-mid: #7f0d18;
+    --credo-red-metal-bottom: #3f0509;
+    --credo-red-muted: #9e1824;
+    --credo-red-glow: rgba(197, 27, 43, 0.22);
+    --credo-text: #f4f6f8;
+    --credo-text-soft: #cfd5de;
+    --credo-text-muted: #8c95a3;
+    --credo-border: rgba(209, 24, 39, 0.34);
+    --credo-border-strong: rgba(234, 27, 45, 0.62);
+    --credo-shadow-red: 0 0 18px rgba(197, 27, 43, 0.12);
+    --credo-border-soft: rgba(255, 255, 255, 0.08);
+    --credo-radius-sm: 6px;
+    --credo-radius: 10px;
+    --credo-radius-lg: 16px;
+    --credo-shadow-red: 0 0 18px rgba(223, 35, 56, 0.16);
+    --credo-shadow-panel: 0 18px 48px rgba(0, 0, 0, 0.54);
+    --credo-page-padding: clamp(32px, 4vw, 96px);
+    --credo-font-hero-kicker: "Michroma", "Oxanium", "Segoe UI", Arial, sans-serif;
+    --credo-font-logo: "Michroma", "Orbitron", "Segoe UI", Arial, sans-serif;
+    --credo-font-display: "Orbitron", "Oxanium", "Segoe UI", Arial, sans-serif;
+    --credo-font-body: "Rajdhani", "Segoe UI", Arial, sans-serif;
+    --credo-font-ui: "Chakra Petch", "Rajdhani", "Segoe UI", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+    background: linear-gradient(180deg, #10151d 0%, #0d1117 45%, #090c11 100%);
+    color: var(--credo-text);
+}
+
+body {
+    font-family: var(--credo-font-body);
+    overflow-x: hidden;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    text-rendering: geometricPrecision;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.credo-title,
+.credo-button {
+    font-family: var(--credo-font-ui);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img,
+svg,
+video {
+    max-width: 100%;
+    display: block;
+}
+
+:focus-visible {
+    outline: 2px solid var(--credo-red-bright);
+    outline-offset: 3px;
+}
+
+.credo-page {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #121822 0%, #0d1117 48%, #090c11 100%);
+}
+
+.credo-container {
+    width: calc(100% - (var(--credo-page-padding) * 2));
+    margin-inline: auto;
+}
+
+.credo-kicker {
+    color: var(--credo-red-bright);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 700;
+}
+
+.credo-title {
+    margin: 0;
+    color: var(--credo-text);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.credo-text-muted {
+    color: var(--credo-text-muted);
+}
+
+/* Buttons */
+
+.credo-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    min-height: 44px;
+    padding: 0 1.45rem;
+    border: 1px solid var(--credo-border);
+    border-radius: var(--credo-radius-sm);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(3, 7, 11, 0.86));
+    color: var(--credo-text);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10), inset 0 -1px 0 rgba(0, 0, 0, 0.68);
+    transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
+}
+
+.credo-button:hover {
+    border-color: var(--credo-border-strong);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(10, 14, 20, 0.96));
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.credo-button-primary {
+    background: linear-gradient( 180deg, rgba(255, 255, 255, 0.10) 0%, transparent 18%, rgba(0, 0, 0, 0.22) 100% ), linear-gradient( 180deg, var(--credo-red-metal-top) 0%, var(--credo-red-metal-mid) 52%, var(--credo-red-metal-bottom) 100% );
+    border-color: rgba(197, 27, 43, 0.62);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), inset 0 -1px 0 rgba(0, 0, 0, 0.45), 0 0 14px rgba(197, 27, 43, 0.16);
+}
+
+.credo-button-primary:hover {
+    background: linear-gradient( 180deg, rgba(255, 255, 255, 0.14) 0%, transparent 18%, rgba(0, 0, 0, 0.18) 100% ), linear-gradient( 180deg, #c42132 0%, #8f101b 52%, #4b070d 100% );
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), inset 0 -1px 0 rgba(0, 0, 0, 0.45), 0 0 18px rgba(197, 27, 43, 0.20);
+}
+
+.credo-button-ghost {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(6, 10, 15, 0.92));
+}
+
+.credo-button-ghost:hover {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(14, 19, 27, 0.98));
+}
+
+@media (max-width: 700px) {
+    :root {
+        --credo-page-padding: 16px;
+    }
+}
