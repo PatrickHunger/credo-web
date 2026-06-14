@@ -1,55 +1,54 @@
-﻿@page "/"
+@page "/"
 @layout PublicLayout
+@inject IApplicationStringLocalizer T
 
-<PageTitle>C.R.E.D.O. - Community. Respect. Excellence.</PageTitle>
+<PageTitle>@T["Home.PageTitle"]</PageTitle>
 
 <div class="public-home">
     <section class="public-hero">
         <div class="public-hero__inner">
             <div class="public-hero__content">
-                <div class="public-hero__eyebrow">Welcome to</div>
+                <div class="public-hero__eyebrow">@T["Home.Hero.Eyebrow"]</div>
 
                 <h1 class="public-hero__title">C.R.E.D.O.</h1>
 
                 <div class="public-hero__motto">
-                    Community. Respect. Excellence.<br />
-                    Dedication. Order.
+                    @T["Home.Hero.MottoLine1"]<br />
+                    @T["Home.Hero.MottoLine2"]
                 </div>
 
                 <p class="public-hero__text">
-                    We are a disciplined and dedicated Star Citizen organization
-                    united by respect, teamwork, and a drive for excellence.
-                    Together, we build stronger missions, stronger bonds, and a better verse.
+                    @T["Home.Hero.Text"]
                 </p>
 
                 <div class="public-hero__actions">
                     <a class="credo-button credo-button-primary" href="/organization">
-                        Explore Organization
-                        <span>›</span>
+                        @T["Home.Hero.ExploreOrganization"]
+                        <span>&rsaquo;</span>
                     </a>
 
                     <a class="credo-button credo-button-ghost" href="/join-us">
-                        Join the Organization
-                        <span>›</span>
+                        @T["Home.Hero.JoinOrganization"]
+                        <span>&rsaquo;</span>
                     </a>
                 </div>
             </div>
 
             <div class="public-video-card">
                 <div class="public-video-card__title">
-                    Watch Our Story
+                    @T["Home.Video.Title"]
                 </div>
 
                 <div class="public-video-card__frame">
-                    <button class="public-video-card__play" type="button" aria-label="Play video"></button>
+                    <button class="public-video-card__play" type="button" aria-label="@T["Home.Video.PlayAria"]"></button>
 
                     <div class="public-video-card__controls">
-                        <span>▶</span>
+                        <span>&#9654;</span>
                         <span>0:00 / 2:35</span>
                         <div class="public-video-card__progress">
                             <span></span>
                         </div>
-                        <span>⚙</span>
+                        <span>&#9881;</span>
                     </div>
                 </div>
             </div>
@@ -59,58 +58,37 @@
     <section class="public-section">
         <div class="public-section__grid">
             <div>
-                <h2 class="public-section__title">Organization &amp; Culture</h2>
+                <h2 class="public-section__title">@T["Home.Organization.Title"]</h2>
 
                 <div class="public-section__text">
-                    <p>
-                        C.R.E.D.O. is a Star Citizen organization built on the foundation
-                        of community, respect, excellence, dedication and order.
-                    </p>
-
-                    <p>
-                        We are more than a group of pilots. We are a team of citizens,
-                        explorers, builders and protectors who believe that structure,
-                        teamwork and trust create lasting success.
-                    </p>
-
-                    <p>
-                        Whether you are new to the verse or a seasoned veteran, you will
-                        find a place where your effort matters and your growth is supported.
-                    </p>
+                    <p>@T["Home.Organization.Paragraph1"]</p>
+                    <p>@T["Home.Organization.Paragraph2"]</p>
+                    <p>@T["Home.Organization.Paragraph3"]</p>
                 </div>
             </div>
 
-            <div class="public-section__image" aria-label="C.R.E.D.O. organization image"></div>
+            <div class="public-section__image" aria-label="@T["Shared.OrganizationImageAlt"]"></div>
         </div>
     </section>
 
     <section class="public-section">
         <div class="public-values">
             <article class="public-value-card">
-                <div class="public-value-card__icon">●</div>
-                <h3>Community</h3>
-                <p>
-                    A welcoming and reliable group of citizens who value respect,
-                    loyalty and camaraderie.
-                </p>
+                <div class="public-value-card__icon">&#9679;</div>
+                <h3>@T["Home.Values.Community.Title"]</h3>
+                <p>@T["Home.Values.Community.Text"]</p>
             </article>
 
             <article class="public-value-card">
-                <div class="public-value-card__icon">⌖</div>
-                <h3>Operations</h3>
-                <p>
-                    From combat to cargo, exploration to support, we operate with
-                    purpose, structure and coordination.
-                </p>
+                <div class="public-value-card__icon">&#8982;</div>
+                <h3>@T["Home.Values.Operations.Title"]</h3>
+                <p>@T["Home.Values.Operations.Text"]</p>
             </article>
 
             <article class="public-value-card">
-                <div class="public-value-card__icon">★</div>
-                <h3>Excellence</h3>
-                <p>
-                    We strive to improve, prepare and act with discipline in everything
-                    we do as an organization.
-                </p>
+                <div class="public-value-card__icon">&#9733;</div>
+                <h3>@T["Home.Values.Excellence.Title"]</h3>
+                <p>@T["Home.Values.Excellence.Text"]</p>
             </article>
         </div>
     </section>

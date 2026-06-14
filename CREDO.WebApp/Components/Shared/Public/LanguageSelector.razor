@@ -1,0 +1,37 @@
+@inject IApplicationStringLocalizer T
+@inject NavigationManager Navigation
+
+<form class="public-language" action="/language/set" method="get">
+    <input type="hidden" name="returnUrl" value="@ReturnUrl" />
+
+    <label class="visually-hidden" for="public-language-select">@T["Header.LanguageLabel"]</label>
+    <select id="public-language-select"
+            class="public-language__select"
+            name="culture"
+            aria-label="@T["Header.LanguageLabel"]"
+            onchange="this.form.submit()">
+        @foreach (var language in T.SupportedLanguages)
+        {
+            <option value="@language.CultureName" selected="@(language.CultureName == T.CurrentLanguage.CultureName)">
+                @language.ShortName
+            </option>
+        }
+    </select>
+
+    <noscript>
+        <button class="public-language__submit" type="submit">@T["Header.ChangeLanguage"]</button>
+    </noscript>
+</form>
+
+@code {
+    private string ReturnUrl
+    {
+        get
+        {
+            var relativePath = Navigation.ToBaseRelativePath(Navigation.Uri);
+            return string.IsNullOrWhiteSpace(relativePath)
+                ? "/"
+                : $"/{relativePath}";
+        }
+    }
+}
