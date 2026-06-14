@@ -1,0 +1,61 @@
+@page "/coming-soon"
+@page "/fleet"
+@page "/media"
+@page "/events"
+@page "/join-us"
+@page "/contact"
+@page "/member-login"
+@layout PublicLayout
+@inject IApplicationStringLocalizer T
+@inject NavigationManager Navigation
+
+<PageTitle>@PageTitle</PageTitle>
+
+<section class="public-status-page">
+    <div class="public-status-page__inner">
+        <div class="public-status-page__content">
+            <div class="public-status-page__code">@T["ComingSoon.Code"]</div>
+            <p class="public-status-page__eyebrow">@SectionLabel</p>
+            <h1 class="public-status-page__title">@T["ComingSoon.Heading"]</h1>
+            <p class="public-status-page__text">@T["ComingSoon.Text"]</p>
+
+            <div class="public-status-page__actions">
+                <a class="credo-button credo-button-primary" href="/">
+                    @T["Shared.BackHome"]
+                    <span>&rsaquo;</span>
+                </a>
+
+                <a class="credo-button credo-button-ghost" href="/organization">
+                    @T["ComingSoon.ExploreOrganization"]
+                    <span>&rsaquo;</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="public-status-panel" aria-hidden="true">
+            <div class="public-status-panel__signal"></div>
+            <div class="public-status-panel__ring"></div>
+            <div class="public-status-panel__line"></div>
+            <div class="public-status-panel__line public-status-panel__line--short"></div>
+            <div class="public-status-panel__line"></div>
+        </div>
+    </div>
+</section>
+
+@code {
+    private string PageTitle => $"{T["ComingSoon.Heading"]} - C.R.E.D.O.";
+
+    private string SectionLabel => T[$"ComingSoon.Section.{CurrentSlug}"];
+
+    private string CurrentSlug
+    {
+        get
+        {
+            var relativePath = Navigation.ToBaseRelativePath(Navigation.Uri).Split('?', '#')[0].Trim('/');
+
+            return string.IsNullOrWhiteSpace(relativePath)
+                ? "Default"
+                : relativePath.Replace('/', '.');
+        }
+    }
+}

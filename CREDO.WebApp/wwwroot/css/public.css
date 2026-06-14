@@ -10,6 +10,7 @@
 .public-hero__inner,
 .public-section__grid,
 .public-values,
+.public-status-page__inner,
 .public-footer__inner {
     width: calc(100% - (var(--credo-page-padding) * 2));
     margin-inline: auto;
@@ -22,6 +23,9 @@
 .public-hero__eyebrow,
 .public-hero__title,
 .public-hero__motto,
+.public-status-page__code,
+.public-status-page__eyebrow,
+.public-status-page__title,
 .public-header__nav a,
 .public-header__brand-name,
 .public-video-card__title {
@@ -33,6 +37,7 @@
 .public-hero__motto,
 .public-hero__text,
 .public-section__text,
+.public-status-page__text,
 .public-value-card p,
 .public-footer {
     font-family: var(--credo-font-ui);
@@ -362,6 +367,168 @@
     margin-top: 2rem;
 }
 
+/* Status pages */
+
+.public-status-page {
+    position: relative;
+    overflow: hidden;
+    min-height: calc(100vh - 78px);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(209, 24, 39, 0.16);
+    background: #05080c;
+}
+
+.public-status-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(5, 7, 11, 0.98), rgba(5, 7, 11, 0.82) 44%, rgba(35, 6, 11, 0.64) 100%), radial-gradient(ellipse at 76% 42%, rgba(198, 22, 38, 0.24), transparent 38%), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 88px);
+    z-index: 0;
+}
+
+.public-status-page::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.018), transparent 45%, rgba(255, 38, 56, 0.06));
+}
+
+.public-status-page__inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(360px, 0.9fr) minmax(360px, 0.7fr);
+    gap: 3rem;
+    align-items: center;
+    padding-block: 4.5rem;
+}
+
+.public-status-page__content {
+    max-width: 720px;
+}
+
+.public-status-page__code {
+    margin-bottom: 1rem;
+    color: rgba(255, 38, 56, 0.86);
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.34em;
+    line-height: 1;
+    text-transform: uppercase;
+    text-shadow: 0 0 16px rgba(255, 38, 56, 0.25);
+}
+
+.public-status-page__eyebrow {
+    margin: 0 0 0.75rem;
+    color: var(--credo-text-soft);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.public-status-page__title {
+    margin: 0;
+    max-width: 760px;
+    color: #f8fafc;
+    background: linear-gradient(180deg, #ffffff 0%, #e6ebf1 48%, #9da6b1 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.8rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-transform: uppercase;
+    filter: drop-shadow(0 6px 7px rgba(0, 0, 0, 0.62));
+}
+
+.public-status-page__text {
+    max-width: 620px;
+    margin: 1.35rem 0 0;
+    color: rgba(244, 246, 248, 0.78);
+    font-size: 1.04rem;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    line-height: 1.58;
+}
+
+.public-status-page__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 2rem;
+}
+
+.public-status-panel {
+    justify-self: end;
+    width: min(100%, 440px);
+    aspect-ratio: 1;
+    position: relative;
+    border: 1px solid rgba(223, 35, 56, 0.30);
+    border-radius: var(--credo-radius-sm);
+    background: linear-gradient(180deg, rgba(13, 18, 25, 0.92), rgba(5, 8, 12, 0.96));
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.50), inset 0 0 0 1px rgba(255, 255, 255, 0.035), 0 0 18px rgba(197, 27, 43, 0.10);
+}
+
+.public-status-panel::before {
+    content: "";
+    position: absolute;
+    inset: 26px;
+    border: 1px solid rgba(255, 38, 56, 0.16);
+    background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.026) 0 1px, transparent 1px 38px), repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.026) 0 1px, transparent 1px 38px);
+}
+
+.public-status-panel__signal {
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: #f6f8fb;
+    box-shadow: 0 0 0 5px rgba(181, 17, 28, 0.82), 0 0 26px rgba(255, 33, 49, 0.52);
+}
+
+.public-status-panel__ring {
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgba(255, 38, 56, 0.44);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0 0 26px rgba(255, 38, 56, 0.055), 0 0 22px rgba(255, 38, 56, 0.10);
+}
+
+.public-status-panel__line {
+    position: absolute;
+    left: 19%;
+    right: 19%;
+    bottom: 24%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 38, 56, 0.78), transparent);
+    box-shadow: 0 0 10px rgba(255, 38, 56, 0.20);
+}
+
+.public-status-panel__line:nth-of-type(4) {
+    bottom: 19%;
+}
+
+.public-status-panel__line:nth-of-type(5) {
+    bottom: 14%;
+}
+
+.public-status-panel__line--short {
+    left: 28%;
+    right: 28%;
+}
+
 /* Video card */
 
 .public-video-card {
@@ -681,6 +848,16 @@
         padding-block: 4rem;
     }
 
+    .public-status-page__inner {
+        grid-template-columns: 1fr;
+        padding-block: 4rem;
+    }
+
+    .public-status-panel {
+        justify-self: start;
+        max-width: 360px;
+    }
+
     .public-video-card {
         justify-self: start;
     }
@@ -735,6 +912,33 @@
         font-size: 3rem;
         letter-spacing: 0.075em;
         transform: none;
+    }
+
+    .public-status-page {
+        min-height: calc(100vh - 132px);
+    }
+
+    .public-status-page__inner {
+        gap: 2rem;
+        padding-block: 3rem;
+    }
+
+    .public-status-page__title {
+        font-size: 2.3rem;
+        letter-spacing: 0.06em;
+    }
+
+    .public-status-page__actions .credo-button {
+        width: 100%;
+    }
+
+    .public-status-panel {
+        width: min(100%, 300px);
+    }
+
+    .public-status-panel__ring {
+        width: 132px;
+        height: 132px;
     }
 
     .public-hero__motto {

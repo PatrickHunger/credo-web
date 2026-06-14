@@ -28,6 +28,8 @@ public sealed class InMemoryResourceDictionarySource : IResourceDictionarySource
                 ["Footer.Contact"] = "Contact",
                 ["Footer.JoinUs"] = "Join Us",
 
+                ["Shared.BackHome"] = "Back to Home",
+
                 ["Home.PageTitle"] = "C.R.E.D.O. - Community. Respect. Excellence.",
                 ["Home.Hero.Eyebrow"] = "Welcome to",
                 ["Home.Hero.MottoLine1"] = "Community. Respect. Excellence.",
@@ -64,9 +66,24 @@ public sealed class InMemoryResourceDictionarySource : IResourceDictionarySource
                 ["Organization.Joining.JoinUs"] = "Join Us",
                 ["Organization.Joining.Contact"] = "Contact",
 
-                ["NotFound.PageTitle"] = "Not Found",
-                ["NotFound.Heading"] = "Not Found",
-                ["NotFound.Text"] = "Sorry, the content you are looking for does not exist."
+                ["NotFound.PageTitle"] = "Page Not Found - C.R.E.D.O.",
+                ["NotFound.Eyebrow"] = "Signal lost",
+                ["NotFound.Heading"] = "Page Not Found",
+                ["NotFound.Text"] = "The requested page could not be found or is no longer available.",
+                ["NotFound.BackPrevious"] = "Go Back",
+
+                ["ComingSoon.Code"] = "Soon",
+                ["ComingSoon.Heading"] = "Coming Soon",
+                ["ComingSoon.Text"] = "This area is currently under development and will be available soon.",
+                ["ComingSoon.ExploreOrganization"] = "Explore Organization",
+                ["ComingSoon.Section.Default"] = "Upcoming section",
+                ["ComingSoon.Section.coming-soon"] = "Upcoming section",
+                ["ComingSoon.Section.fleet"] = "Fleet",
+                ["ComingSoon.Section.media"] = "Media",
+                ["ComingSoon.Section.events"] = "Events",
+                ["ComingSoon.Section.join-us"] = "Join Us",
+                ["ComingSoon.Section.contact"] = "Contact",
+                ["ComingSoon.Section.member-login"] = "Member Login"
             },
             [LanguageCatalog.German] = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
             {
@@ -90,6 +107,8 @@ public sealed class InMemoryResourceDictionarySource : IResourceDictionarySource
                 ["Footer.Nav.AriaLabel"] = "Sekundäre öffentliche Navigation",
                 ["Footer.Contact"] = "Kontakt",
                 ["Footer.JoinUs"] = "Mitmachen",
+
+                ["Shared.BackHome"] = "Zur Startseite",
 
                 ["Home.PageTitle"] = "C.R.E.D.O. - Gemeinschaft. Respekt. Exzellenz.",
                 ["Home.Hero.Eyebrow"] = "Willkommen bei",
@@ -127,9 +146,24 @@ public sealed class InMemoryResourceDictionarySource : IResourceDictionarySource
                 ["Organization.Joining.JoinUs"] = "Mitmachen",
                 ["Organization.Joining.Contact"] = "Kontakt",
 
-                ["NotFound.PageTitle"] = "Nicht gefunden",
-                ["NotFound.Heading"] = "Nicht gefunden",
-                ["NotFound.Text"] = "Der gesuchte Inhalt existiert leider nicht."
+                ["NotFound.PageTitle"] = "Seite nicht gefunden - C.R.E.D.O.",
+                ["NotFound.Eyebrow"] = "Signal verloren",
+                ["NotFound.Heading"] = "Seite nicht gefunden",
+                ["NotFound.Text"] = "Die angeforderte Seite wurde nicht gefunden oder ist nicht mehr verfügbar.",
+                ["NotFound.BackPrevious"] = "Zurück",
+
+                ["ComingSoon.Code"] = "Bald",
+                ["ComingSoon.Heading"] = "Bald verfügbar",
+                ["ComingSoon.Text"] = "Dieser Bereich befindet sich aktuell in Entwicklung und wird bald verfügbar sein.",
+                ["ComingSoon.ExploreOrganization"] = "Organisation entdecken",
+                ["ComingSoon.Section.Default"] = "Kommender Bereich",
+                ["ComingSoon.Section.coming-soon"] = "Kommender Bereich",
+                ["ComingSoon.Section.fleet"] = "Flotte",
+                ["ComingSoon.Section.media"] = "Medien",
+                ["ComingSoon.Section.events"] = "Events",
+                ["ComingSoon.Section.join-us"] = "Mitmachen",
+                ["ComingSoon.Section.contact"] = "Kontakt",
+                ["ComingSoon.Section.member-login"] = "Member Login"
             }
         };
 
