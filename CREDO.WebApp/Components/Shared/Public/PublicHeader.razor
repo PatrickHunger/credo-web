@@ -1,0 +1,34 @@
+﻿@using Microsoft.AspNetCore.Components.Routing
+
+<header class="public-header">
+    <div class="public-header__inner">
+        <a class="public-header__brand" href="/">
+            <span class="public-header__logo" aria-hidden="true"></span>
+
+            <span class="public-header__brand-text">
+                <span class="public-header__brand-name">C.R.E.D.O.</span>
+                <span class="public-header__brand-subtitle">Community · Respect · Excellence</span>
+            </span>
+        </a>
+
+        <nav class="public-header__nav" aria-label="Public navigation">
+            <NavLink href="/" Match="NavLinkMatch.All">Home</NavLink>
+            <NavLink href="/organization">Organization</NavLink>
+            <NavLink href="/fleet">Fleet</NavLink>
+            <NavLink href="/media">Media</NavLink>
+            <NavLink href="/events">Events</NavLink>
+            <NavLink href="/join-us">Join Us</NavLink>
+        </nav>
+
+        <div class="public-header__actions">
+            <a class="credo-button credo-button-ghost" href="/Account/Login">
+                Member Login
+            </a>
+
+            <a class="credo-button credo-button-primary" href="/join-us">
+                Apply Now
+                <span>›</span>
+            </a>
+        </div>
+    </div>
+</header>

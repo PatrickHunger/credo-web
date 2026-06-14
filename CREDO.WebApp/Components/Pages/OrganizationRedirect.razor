@@ -1,0 +1,13 @@
+@page "/about"
+@page "/our-org"
+@layout PublicLayout
+@inject NavigationManager Navigation
+
+<PageTitle>Redirecting - C.R.E.D.O.</PageTitle>
+
+@code {
+    protected override void OnInitialized()
+    {
+        Navigation.NavigateTo("/organization", replace: true);
+    }
+}
