@@ -1,4 +1,5 @@
-﻿@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Routing
+@inject IApplicationStringLocalizer T
 
 <header class="public-header">
     <div class="public-header__inner">
@@ -7,27 +8,29 @@
 
             <span class="public-header__brand-text">
                 <span class="public-header__brand-name">C.R.E.D.O.</span>
-                <span class="public-header__brand-subtitle">Community · Respect · Excellence</span>
+                <span class="public-header__brand-subtitle">@T["Shared.BrandSubtitleShort"]</span>
             </span>
         </a>
 
-        <nav class="public-header__nav" aria-label="Public navigation">
-            <NavLink href="/" Match="NavLinkMatch.All">Home</NavLink>
-            <NavLink href="/organization">Organization</NavLink>
-            <NavLink href="/fleet">Fleet</NavLink>
-            <NavLink href="/media">Media</NavLink>
-            <NavLink href="/events">Events</NavLink>
-            <NavLink href="/join-us">Join Us</NavLink>
+        <nav class="public-header__nav" aria-label="@T["Header.Nav.AriaLabel"]">
+            <NavLink href="/" Match="NavLinkMatch.All">@T["Header.Nav.Home"]</NavLink>
+            <NavLink href="/organization">@T["Header.Nav.Organization"]</NavLink>
+            <NavLink href="/fleet">@T["Header.Nav.Fleet"]</NavLink>
+            <NavLink href="/media">@T["Header.Nav.Media"]</NavLink>
+            <NavLink href="/events">@T["Header.Nav.Events"]</NavLink>
+            <NavLink href="/join-us">@T["Header.Nav.JoinUs"]</NavLink>
         </nav>
 
         <div class="public-header__actions">
+            <LanguageSelector />
+
             <a class="credo-button credo-button-ghost" href="/Account/Login">
-                Member Login
+                @T["Header.MemberLogin"]
             </a>
 
             <a class="credo-button credo-button-primary" href="/join-us">
-                Apply Now
-                <span>›</span>
+                @T["Header.ApplyNow"]
+                <span>&rsaquo;</span>
             </a>
         </div>
     </div>
