@@ -67,9 +67,11 @@ public sealed class InMemoryResourceDictionarySource : IResourceDictionarySource
                 ["Organization.Joining.Contact"] = "Contact",
 
                 ["NotFound.PageTitle"] = "Page Not Found - C.R.E.D.O.",
-                ["NotFound.Eyebrow"] = "Signal lost",
+                ["NotFound.Code"] = "404 - Not Found",
                 ["NotFound.Heading"] = "Page Not Found",
-                ["NotFound.Text"] = "The requested page could not be found or is no longer available.",
+                ["NotFound.Text"] = "The requested page does not exist.",
+                ["NotFound.SecondaryText"] = "The page may have been moved, deleted, or the URL may be incorrect.",
+                ["NotFound.ImageAlt"] = "A space pilot raising both hands in a questioning gesture.",
                 ["NotFound.BackPrevious"] = "Go Back",
 
                 ["ComingSoon.Code"] = "Soon",
@@ -147,9 +149,11 @@ public sealed class InMemoryResourceDictionarySource : IResourceDictionarySource
                 ["Organization.Joining.Contact"] = "Kontakt",
 
                 ["NotFound.PageTitle"] = "Seite nicht gefunden - C.R.E.D.O.",
-                ["NotFound.Eyebrow"] = "Signal verloren",
+                ["NotFound.Code"] = "404 - Nicht gefunden",
                 ["NotFound.Heading"] = "Seite nicht gefunden",
-                ["NotFound.Text"] = "Die angeforderte Seite wurde nicht gefunden oder ist nicht mehr verfügbar.",
+                ["NotFound.Text"] = "Die angeforderte Seite existiert nicht.",
+                ["NotFound.SecondaryText"] = "Die Seite wurde möglicherweise verschoben, gelöscht oder die URL ist falsch.",
+                ["NotFound.ImageAlt"] = "Eine Raumpilotin hebt beide Hände in einer fragenden Geste.",
                 ["NotFound.BackPrevious"] = "Zurück",
 
                 ["ComingSoon.Code"] = "Bald",
