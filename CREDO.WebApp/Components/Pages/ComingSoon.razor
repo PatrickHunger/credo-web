@@ -11,13 +11,13 @@
 
 <PageTitle>@PageTitle</PageTitle>
 
-<section class="public-status-page">
+<section class="public-status-page public-status-page--coming-soon">
     <div class="public-status-page__inner">
         <div class="public-status-page__content">
-            <div class="public-status-page__code">@T["ComingSoon.Code"]</div>
-            <p class="public-status-page__eyebrow">@SectionLabel</p>
+            <div class="public-status-page__code">@SectionLabel</div>
             <h1 class="public-status-page__title">@T["ComingSoon.Heading"]</h1>
             <p class="public-status-page__text">@T["ComingSoon.Text"]</p>
+            <p class="public-status-page__text public-status-page__text--secondary">@T["ComingSoon.SecondaryText"]</p>
 
             <div class="public-status-page__actions">
                 <a class="credo-button credo-button-primary" href="/">
@@ -31,15 +31,12 @@
                 </a>
             </div>
         </div>
-
-        <div class="public-status-panel" aria-hidden="true">
-            <div class="public-status-panel__signal"></div>
-            <div class="public-status-panel__ring"></div>
-            <div class="public-status-panel__line"></div>
-            <div class="public-status-panel__line public-status-panel__line--short"></div>
-            <div class="public-status-panel__line"></div>
-        </div>
     </div>
+
+    <img class="public-status-page__background"
+         src="/images/public/coming-soon-background-4k.webp"
+         alt="@T["ComingSoon.ImageAlt"]"
+         draggable="false" />
 </section>
 
 @code {
