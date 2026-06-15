@@ -4,13 +4,13 @@
 
 <PageTitle>@T["NotFound.PageTitle"]</PageTitle>
 
-<section class="public-status-page">
+<section class="public-status-page public-status-page--not-found">
     <div class="public-status-page__inner">
         <div class="public-status-page__content">
-            <div class="public-status-page__code">404</div>
-            <p class="public-status-page__eyebrow">@T["NotFound.Eyebrow"]</p>
+            <div class="public-status-page__code">@T["NotFound.Code"]</div>
             <h1 class="public-status-page__title">@T["NotFound.Heading"]</h1>
             <p class="public-status-page__text">@T["NotFound.Text"]</p>
+            <p class="public-status-page__text public-status-page__text--secondary">@T["NotFound.SecondaryText"]</p>
 
             <div class="public-status-page__actions">
                 <a class="credo-button credo-button-primary" href="/">
@@ -24,12 +24,10 @@
             </div>
         </div>
 
-        <div class="public-status-panel" aria-hidden="true">
-            <div class="public-status-panel__signal"></div>
-            <div class="public-status-panel__ring"></div>
-            <div class="public-status-panel__line"></div>
-            <div class="public-status-panel__line public-status-panel__line--short"></div>
-            <div class="public-status-panel__line"></div>
-        </div>
     </div>
+
+    <img class="public-status-page__background"
+         src="/images/public/not-found-background-4k.webp"
+         alt="@T["NotFound.ImageAlt"]"
+         draggable="false" />
 </section>
