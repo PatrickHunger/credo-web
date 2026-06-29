@@ -4,67 +4,267 @@
 
 <PageTitle>@T["Organization.PageTitle"]</PageTitle>
 
-<div class="public-page">
-    <section class="public-section">
-        <div class="public-section__grid">
-            <div>
-                <h1 class="public-section__title">@T["Organization.Title"]</h1>
+<div class="public-page public-organization">
+    <section class="organization-hero" aria-labelledby="organization-hero-title">
+        <div class="organization-hero__inner">
+            <div class="organization-hero__content">
+                <h1 id="organization-hero-title" class="public-hero__title">@T["Organization.Title"]</h1>
 
-                <div class="public-section__text">
-                    <p>@T["Organization.Paragraph1"]</p>
-                    <p>@T["Organization.Paragraph2"]</p>
-                    <p>@T["Organization.Paragraph3"]</p>
+                <p class="organization-hero__motto">@T["Organization.Hero.Motto"]</p>
+
+                <div class="public-hero__copy">
+                    <p class="public-hero__lead">
+                        <strong>@T["Organization.Hero.Lead"]</strong>
+                    </p>
+
+                    <p>@T["Organization.Hero.Intro"]</p>
                 </div>
-            </div>
 
-            <div class="public-section__image" aria-label="@T["Shared.OrganizationImageAlt"]"></div>
-        </div>
-    </section>
-
-    <section class="public-section">
-        <div class="public-values">
-            <article class="public-value-card">
-                <div class="public-value-card__icon">&#9679;</div>
-                <h3>@T["Organization.Identity.Title"]</h3>
-                <p>@T["Organization.Identity.Text"]</p>
-            </article>
-
-            <article class="public-value-card">
-                <div class="public-value-card__icon">&#8982;</div>
-                <h3>@T["Organization.Structure.Title"]</h3>
-                <p>@T["Organization.Structure.Text"]</p>
-            </article>
-
-            <article class="public-value-card">
-                <div class="public-value-card__icon">&#9733;</div>
-                <h3>@T["Organization.Standards.Title"]</h3>
-                <p>@T["Organization.Standards.Text"]</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="public-section">
-        <div class="public-section__grid">
-            <div>
-                <h2 class="public-section__title">@T["Organization.Joining.Title"]</h2>
-
-                <div class="public-section__text">
-                    <p>@T["Organization.Joining.Text"]</p>
-                </div>
-            </div>
-
-            <div class="public-section__text">
                 <div class="public-hero__actions">
-                    <a class="credo-button credo-button-primary" href="/join-us">
+                    <a class="credo-button credo-button-primary" href="#organization-hub">
+                        @T["Organization.Hero.LearnMore"]
+                        <span>&rsaquo;</span>
+                    </a>
+
+                    <a class="credo-button credo-button-ghost" href="/join-us">
                         @T["Organization.Joining.JoinUs"]
                         <span>&rsaquo;</span>
                     </a>
-
-                    <a class="credo-button credo-button-ghost" href="/contact">
-                        @T["Organization.Joining.Contact"]
-                        <span>&rsaquo;</span>
-                    </a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="organization-hub" class="public-section organization-section organization-section--hub">
+        <div class="organization-section__inner organization-section__inner--split">
+            <div>
+                <h2 class="public-section__title">@T["Organization.SharedHub.Title"]</h2>
+
+                <div class="public-section__text">
+                    <p>@T["Organization.SharedHub.Paragraph1"]</p>
+                </div>
+
+                <p class="organization-callout">@T["Organization.SharedHub.Highlight"]</p>
+            </div>
+
+            <div class="organization-media">
+                <img src="/images/public/organization-command-structure.webp" alt="@T["Organization.StructureImageAlt"]" />
+            </div>
+        </div>
+    </section>
+
+    <section class="public-section organization-section organization-section--audience">
+        <div class="organization-section__inner">
+            <div class="organization-section-heading organization-section-heading--center">
+                <h2 class="public-section__title">@T["Organization.Audience.Title"]</h2>
+            </div>
+
+            <div class="organization-audience-grid">
+                <article class="organization-audience-card organization-audience-card--individuals">
+                    <div class="organization-card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 64 64" focusable="false">
+                            <path d="M32 10c8.8 0 16 7.2 16 16v6c0 9.9-7.2 18-16 18s-16-8.1-16-18v-6c0-8.8 7.2-16 16-16Z" />
+                            <path d="M18 30h28" />
+                            <path d="m21 25 7 5" />
+                            <path d="m43 25-7 5" />
+                            <circle cx="32" cy="33" r="4" />
+                            <path d="m24 49-8 7h32l-8-7" />
+                        </svg>
+                    </div>
+                    <h3>@T["Organization.Audience.Individuals.Title"]</h3>
+                    <p>@T["Organization.Audience.Individuals.Text"]</p>
+                </article>
+
+                <article class="organization-audience-card organization-audience-card--squads">
+                    <div class="organization-card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 64 64" focusable="false">
+                            <circle cx="32" cy="19" r="8" />
+                            <circle cx="18" cy="39" r="7" />
+                            <circle cx="46" cy="39" r="7" />
+                            <path d="M32 28v8" />
+                            <path d="m25 34-4 4" />
+                            <path d="m39 34 4 4" />
+                            <path d="M10 56c2.5-6 7.4-9 14.5-9" />
+                            <path d="M24 56c2.1-6.7 4.8-10 8-10s5.9 3.3 8 10" />
+                            <path d="M54 56c-2.5-6-7.4-9-14.5-9" />
+                        </svg>
+                    </div>
+                    <h3>@T["Organization.Audience.Squads.Title"]</h3>
+                    <p>@T["Organization.Audience.Squads.Text"]</p>
+                </article>
+
+                <article class="organization-audience-card organization-audience-card--orgs">
+                    <div class="organization-card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 64 64" focusable="false">
+                            <path d="M12 52h40" />
+                            <path d="M16 52V25l16-10 16 10v27" />
+                            <path d="M24 52V33h16v19" />
+                            <path d="M22 27h20" />
+                            <path d="M22 40h20" />
+                            <circle cx="32" cy="24" r="3" />
+                            <path d="M12 25h40" />
+                        </svg>
+                    </div>
+                    <h3>@T["Organization.Audience.Orgs.Title"]</h3>
+                    <p>@T["Organization.Audience.Orgs.Text"]</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="public-section organization-section organization-section--flow">
+        <div class="organization-section__inner">
+            <div class="organization-section-heading organization-section-heading--center">
+                <h2 class="public-section__title">@T["Organization.Collaboration.Title"]</h2>
+
+                <p>@T["Organization.Collaboration.Intro"]</p>
+            </div>
+
+            <div class="organization-flow-grid">
+                <article class="organization-flow-item">
+                    <div class="organization-flow-icon" aria-hidden="true">
+                        <svg viewBox="0 0 64 64" focusable="false">
+                            <path d="m32 10 16 38-16-10-16 10 16-38Z" />
+                            <path d="M32 24v14" />
+                            <path d="m17 47-8 7" />
+                            <path d="m47 47 8 7" />
+                        </svg>
+                    </div>
+                    <h3>@T["Organization.Elements.Squads.Title"]</h3>
+                    <p>@T["Organization.Elements.Squads.Text"]</p>
+                </article>
+
+                <article class="organization-flow-item">
+                    <div class="organization-flow-icon" aria-hidden="true">
+                        <svg viewBox="0 0 64 64" focusable="false">
+                            <circle cx="32" cy="32" r="7" />
+                            <circle cx="18" cy="18" r="5" />
+                            <circle cx="46" cy="18" r="5" />
+                            <circle cx="18" cy="46" r="5" />
+                            <circle cx="46" cy="46" r="5" />
+                            <path d="m23 21 4 5" />
+                            <path d="m41 21-4 5" />
+                            <path d="m23 43 4-5" />
+                            <path d="m41 43-4-5" />
+                        </svg>
+                    </div>
+                    <h3>@T["Organization.Elements.Divisions.Title"]</h3>
+                    <p>@T["Organization.Elements.Divisions.Text"]</p>
+                </article>
+
+                <article class="organization-flow-item">
+                    <div class="organization-flow-icon" aria-hidden="true">
+                        <svg viewBox="0 0 64 64" focusable="false">
+                            <circle cx="32" cy="32" r="16" />
+                            <circle cx="32" cy="32" r="5" />
+                            <path d="M32 8v10" />
+                            <path d="M32 46v10" />
+                            <path d="M8 32h10" />
+                            <path d="M46 32h10" />
+                            <path d="m45 19 7-7" />
+                        </svg>
+                    </div>
+                    <h3>@T["Organization.Elements.TaskForces.Title"]</h3>
+                    <p>@T["Organization.Elements.TaskForces.Text"]</p>
+                </article>
+
+                <article class="organization-flow-item">
+                    <div class="organization-flow-icon" aria-hidden="true">
+                        <svg viewBox="0 0 64 64" focusable="false">
+                            <path d="M16 50c8-17 24-19 32-36" />
+                            <circle cx="16" cy="50" r="5" />
+                            <circle cx="32" cy="32" r="5" />
+                            <path d="M48 14v23" />
+                            <path d="M48 14h11l-4 6 4 6H48" />
+                            <path d="m27 37-6 8" />
+                            <path d="m37 27 6-8" />
+                        </svg>
+                    </div>
+                    <h3>@T["Organization.Elements.Projects.Title"]</h3>
+                    <p>@T["Organization.Elements.Projects.Text"]</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="public-section organization-section organization-section--promise">
+        <div class="organization-section__inner">
+            <article class="organization-promise-panel">
+                <div class="organization-promise-emblem" aria-hidden="true">
+                    <span></span>
+                </div>
+
+                <div>
+                    <h2 class="public-section__title">@T["Organization.Promise.Title"]</h2>
+
+                    <div class="public-section__text">
+                        <p>@T["Organization.MultiOrg.Summary"]</p>
+                        <p>@T["Organization.Promise.Paragraph2"]</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="public-section organization-section organization-section--values">
+        <div class="organization-section__inner">
+            <div class="organization-section-heading organization-section-heading--center">
+                <h2 class="public-section__title">@T["Organization.Values.Title"]</h2>
+            </div>
+
+            <div class="organization-values-row">
+                <article class="organization-value-item">
+                    <div class="organization-value-icon" aria-hidden="true">C</div>
+                    <h3>@T["Organization.Values.Community.Title"]</h3>
+                    <p>@T["Organization.Values.Community.Text"]</p>
+                </article>
+
+                <article class="organization-value-item">
+                    <div class="organization-value-icon" aria-hidden="true">R</div>
+                    <h3>@T["Organization.Values.Respect.Title"]</h3>
+                    <p>@T["Organization.Values.Respect.Text"]</p>
+                </article>
+
+                <article class="organization-value-item">
+                    <div class="organization-value-icon" aria-hidden="true">E</div>
+                    <h3>@T["Organization.Values.Equality.Title"]</h3>
+                    <p>@T["Organization.Values.Equality.Text"]</p>
+                </article>
+
+                <article class="organization-value-item">
+                    <div class="organization-value-icon" aria-hidden="true">D</div>
+                    <h3>@T["Organization.Values.Dedication.Title"]</h3>
+                    <p>@T["Organization.Values.Dedication.Text"]</p>
+                </article>
+
+                <article class="organization-value-item">
+                    <div class="organization-value-icon" aria-hidden="true">O</div>
+                    <h3>@T["Organization.Values.Order.Title"]</h3>
+                    <p>@T["Organization.Values.Order.Text"]</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="public-section organization-section organization-cta-section">
+        <div class="organization-section__inner organization-cta-section__inner">
+            <h2 class="public-section__title">@T["Organization.Joining.Title"]</h2>
+
+            <div class="public-section__text">
+                <p>@T["Organization.Joining.Text1"]</p>
+                <p>@T["Organization.Joining.Text2"]</p>
+            </div>
+
+            <div class="organization-cta-actions">
+                <a class="credo-button credo-button-primary" href="/join-us">
+                    @T["Organization.Joining.JoinUs"]
+                    <span>&rsaquo;</span>
+                </a>
+
+                <a class="credo-button credo-button-ghost" href="/contact">
+                    @T["Organization.Joining.Contact"]
+                    <span>&rsaquo;</span>
+                </a>
             </div>
         </div>
     </section>

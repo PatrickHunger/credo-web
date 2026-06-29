@@ -5,21 +5,22 @@
 <PageTitle>@T["Home.PageTitle"]</PageTitle>
 
 <div class="public-home">
-    <section class="public-hero">
+    <section class="public-hero" aria-labelledby="home-hero-title">
         <div class="public-hero__inner">
             <div class="public-hero__content">
                 <div class="public-hero__eyebrow">@T["Home.Hero.Eyebrow"]</div>
 
-                <h1 class="public-hero__title">C.R.E.D.O.</h1>
+                <h1 id="home-hero-title" class="public-hero__title">C.R.E.D.O.</h1>
 
-                <div class="public-hero__motto">
-                    @T["Home.Hero.MottoLine1"]<br />
-                    @T["Home.Hero.MottoLine2"]
+                <div class="public-hero__copy">
+                    <p class="public-hero__lead">
+                        <strong>@T["Home.Hero.Lead"]</strong>
+                    </p>
+
+                    <p>@T["Home.Hero.Connection"]</p>
+
+                    <p>@T["Home.Hero.CollectiveStrength"]</p>
                 </div>
-
-                <p class="public-hero__text">
-                    @T["Home.Hero.Text"]
-                </p>
 
                 <div class="public-hero__actions">
                     <a class="credo-button credo-button-primary" href="/organization">
@@ -31,25 +32,6 @@
                         @T["Home.Hero.JoinOrganization"]
                         <span>&rsaquo;</span>
                     </a>
-                </div>
-            </div>
-
-            <div class="public-video-card">
-                <div class="public-video-card__title">
-                    @T["Home.Video.Title"]
-                </div>
-
-                <div class="public-video-card__frame">
-                    <button class="public-video-card__play" type="button" aria-label="@T["Home.Video.PlayAria"]"></button>
-
-                    <div class="public-video-card__controls">
-                        <span>&#9654;</span>
-                        <span>0:00 / 2:35</span>
-                        <div class="public-video-card__progress">
-                            <span></span>
-                        </div>
-                        <span>&#9881;</span>
-                    </div>
                 </div>
             </div>
         </div>
