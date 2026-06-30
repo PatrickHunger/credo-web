@@ -1,0 +1,36 @@
+name: credo-web
+
+services:
+  webapp:
+    image: credo-web:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${CREDO_HOST_PORT:-8080}:${ASPNETCORE_HTTP_PORTS:-8080}"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "${ASPNETCORE_ENVIRONMENT:-Production}"
+      ASPNETCORE_HTTP_PORTS: "${ASPNETCORE_HTTP_PORTS:-8080}"
+      ConnectionStrings__DefaultConnection: "${CREDO_DB_CONNECTION:-DataSource=/app/Data/app.db;Cache=Shared}"
+      Logging__LogLevel__Default: "${LOGGING__LOGLEVEL__DEFAULT:-Information}"
+      Logging__LogLevel__Microsoft.AspNetCore: "${LOGGING__LOGLEVEL__MICROSOFT_ASPNETCORE:-Warning}"
+    volumes:
+      - credo-data:/app/Data
+    networks:
+      - credo
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - dotnet CREDO.WebApp.dll --healthcheck http://127.0.0.1:$${ASPNETCORE_HTTP_PORTS:-8080}/health
+      interval: 30s
+      timeout: 5s
+      start_period: 20s
+      retries: 3
+
+volumes:
+  credo-data:
+
+networks:
+  credo:
+    driver: bridge
