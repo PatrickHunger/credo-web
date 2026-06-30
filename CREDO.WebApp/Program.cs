@@ -6,6 +6,11 @@ using CREDO.WebApp.Components.Account;
 using CREDO.WebApp.Data;
 using CREDO.WebApp.Localization;
 
+if (args.Length > 0 && string.Equals(args[0], "--healthcheck", StringComparison.OrdinalIgnoreCase))
+{
+    return await RunHealthCheckAsync(args);
+}
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -42,6 +47,15 @@ builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSe
 
 var app = builder.Build();
 
+app.Map("/health", health =>
+{
+    health.Run(async context =>
+    {
+        context.Response.ContentType = "text/plain";
+        await context.Response.WriteAsync("Healthy");
+    });
+});
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -69,3 +83,26 @@ app.MapLanguagePreferenceEndpoint();
 app.MapAdditionalIdentityEndpoints();
 
 app.Run();
+return 0;
+
+static async Task<int> RunHealthCheckAsync(string[] args)
+{
+    var healthUrl = args.Length > 1
+        ? args[1]
+        : "http://127.0.0.1:8080/health";
+
+    using var httpClient = new HttpClient
+    {
+        Timeout = TimeSpan.FromSeconds(5)
+    };
+
+    try
+    {
+        using var response = await httpClient.GetAsync(healthUrl);
+        return response.IsSuccessStatusCode ? 0 : 1;
+    }
+    catch
+    {
+        return 1;
+    }
+}
